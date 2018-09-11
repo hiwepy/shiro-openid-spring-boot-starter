@@ -21,7 +21,7 @@ import javax.servlet.ServletResponse;
 import org.openid4java.discovery.DiscoveryInformation;
 
 /**
- * TODO
+ * Openid DiscoveryInformation Provider
  * @author 		： <a href="https://github.com/vindell">vindell</a>
  */
 public interface OpenidDiscoveryInformationProvider {

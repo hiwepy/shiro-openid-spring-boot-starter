@@ -2,7 +2,7 @@ package org.apache.shiro.spring.boot.openid.realm;
 
 import org.apache.shiro.biz.authz.principal.ShiroPrincipal;
 import org.apache.shiro.biz.realm.AbstractAuthorizingRealm;
-import org.apache.shiro.spring.boot.openid.token.OpenidLoginToken;
+import org.apache.shiro.spring.boot.openid.token.OpenidAccessToken;
 
 /**
  * Openid Stateful AuthorizingRealm
@@ -12,7 +12,7 @@ public class OpenidStatefulAuthorizingRealm extends AbstractAuthorizingRealm<Shi
 
 	@Override
 	public Class<?> getAuthenticationTokenClass() {
-		return OpenidLoginToken.class;// 此Realm只支持KissoLoginToken
+		return OpenidAccessToken.class;// 此Realm只支持OpenidAccessToken
 	}
 	
 }

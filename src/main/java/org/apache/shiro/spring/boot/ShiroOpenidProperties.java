@@ -15,12 +15,6 @@
  */
 package org.apache.shiro.spring.boot;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
-import org.apache.shiro.cache.Cache;
-import org.apache.shiro.cache.CacheManager;
-import org.mitre.openid.connect.config.ServerConfiguration;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties(ShiroOpenidProperties.PREFIX)
@@ -33,14 +27,6 @@ public class ShiroOpenidProperties {
 	 */
 	private boolean enabled = false;
 	
-	private String defaultSignerKeyId;
-	
-	private String jwkPublishUrl;
-	
-	/**
-	 * map of issuer url -> server configuration information 
-	 */
-	private Map<String /* pattert */, ServerConfiguration /* Server Configuration */> servers = new LinkedHashMap<String, ServerConfiguration>();
 	
 	public boolean isEnabled() {
 		return enabled;
@@ -50,29 +36,6 @@ public class ShiroOpenidProperties {
 		this.enabled = enabled;
 	}
 
-	public Map<String, ServerConfiguration> getServers() {
-		return servers;
-	}
-
-	public void setServers(Map<String, ServerConfiguration> servers) {
-		this.servers = servers;
-	}
-
-	public String getDefaultSignerKeyId() {
-		return defaultSignerKeyId;
-	}
-
-	public void setDefaultSignerKeyId(String defaultSignerKeyId) {
-		this.defaultSignerKeyId = defaultSignerKeyId;
-	}
-
-	public String getJwkPublishUrl() {
-		return jwkPublishUrl;
-	}
-
-	public void setJwkPublishUrl(String jwkPublishUrl) {
-		this.jwkPublishUrl = jwkPublishUrl;
-	}
 
 }
 

@@ -23,10 +23,9 @@ import org.apache.shiro.session.Session;
 import org.openid4java.discovery.DiscoveryInformation;
 
 /**
- * TODO
+ * Openid DiscoveryInformation Session Provider
  * @author 		： <a href="https://github.com/vindell">vindell</a>
  */
-
 public class OpenidDiscoveryInformationSessionProvider implements OpenidDiscoveryInformationProvider {
 
 	/**

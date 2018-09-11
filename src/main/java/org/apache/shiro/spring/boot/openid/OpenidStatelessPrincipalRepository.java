@@ -24,16 +24,14 @@ import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.biz.authz.principal.ShiroPrincipal;
 import org.apache.shiro.biz.authz.principal.ShiroPrincipalRepository;
 import org.apache.shiro.spring.boot.openid.token.OpenidAccessToken;
-import org.mitre.openid.connect.model.UserInfo;
-import org.mitre.openid.connect.service.UserInfoService;
 
 import com.google.common.collect.Sets;
 
 /**
- * Kisso Token Principal Repository
+ * Openid Token Principal Repository
  * @author 		： <a href="https://github.com/vindell">vindell</a>
  */
-public class OpenidStatelessPrincipalRepository implements ShiroPrincipalRepository<OpenidStatelessPrincipal>, UserInfoService {
+public class OpenidStatelessPrincipalRepository implements ShiroPrincipalRepository<OpenidStatelessPrincipal> {
 	
 	@Override
 	public AuthenticationInfo getAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
@@ -83,22 +81,5 @@ public class OpenidStatelessPrincipalRepository implements ShiroPrincipalReposit
 		// do nothing
 	}
 
-	@Override
-	public UserInfo getByUsername(String username) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	@Override
-	public UserInfo getByUsernameAndClientId(String username, String clientId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	@Override
-	public UserInfo getByEmailAddress(String email) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 }

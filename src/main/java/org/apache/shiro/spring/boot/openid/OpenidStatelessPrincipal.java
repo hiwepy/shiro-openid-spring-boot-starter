@@ -18,7 +18,7 @@ package org.apache.shiro.spring.boot.openid;
 import org.apache.shiro.biz.authz.principal.ShiroPrincipal;
 
 /**
- * TODO
+ * Openid Token Principal
  * @author 		： <a href="https://github.com/vindell">vindell</a>
  */
 @SuppressWarnings("serial")

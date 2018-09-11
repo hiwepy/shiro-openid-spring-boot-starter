@@ -374,7 +374,7 @@
         <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
         <maven-surefire-plugin.vertsion>2.21.0</maven-surefire-plugin.vertsion>
 		<maven-nexus-staging-plugin.version>1.6.8</maven-nexus-staging-plugin.version>
- 		<mitreid.version>1.3.2</mitreid.version>
+ 		<openid4java.version>1.0.0</openid4java.version>
 		<shiro-biz.version>1.0.0-SNAPSHOT</shiro-biz.version>
 	</properties>
 	
@@ -426,27 +426,17 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-autoconfigure</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context-support</artifactId>
-		</dependency>
 		
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 		</dependency>
 		
-		<dependency>
-		    <groupId>org.mitre</groupId>
-		    <artifactId>openid-connect-client</artifactId>
-		   <version>${mitreid.version}</version>
-		</dependency>
-		
 		<!-- https://mvnrepository.com/artifact/org.openid4java/openid4java -->
 		<dependency>
 		    <groupId>org.openid4java</groupId>
 		    <artifactId>openid4java</artifactId>
-		    <version>1.0.0</version>
+		    <version>${openid4java.version}</version>
 		</dependency>
 		
 		<!-- https://github.com/vindell/spring-boot-starter-shiro-biz -->
