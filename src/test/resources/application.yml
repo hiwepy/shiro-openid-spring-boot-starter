@@ -6,6 +6,8 @@ shiro:
   sessionManager:
     sessionIdCookieEnabled: true
     sessionIdUrlRewritingEnabled:  true
-  biz:
-    session-id-cookie:
-      comment: 
+  openid:
+    enabled: true
+    servers:
+      xx : 
+        

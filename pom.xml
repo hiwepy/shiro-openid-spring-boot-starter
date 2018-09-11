@@ -442,6 +442,13 @@
 		   <version>${mitreid.version}</version>
 		</dependency>
 		
+		<!-- https://mvnrepository.com/artifact/org.openid4java/openid4java -->
+		<dependency>
+		    <groupId>org.openid4java</groupId>
+		    <artifactId>openid4java</artifactId>
+		    <version>1.0.0</version>
+		</dependency>
+		
 		<!-- https://github.com/vindell/spring-boot-starter-shiro-biz -->
 		<dependency>
 			<groupId>com.github.vindell</groupId>
