@@ -1,6 +1,6 @@
 package org.apache.shiro.spring.boot;
 
-import org.apache.shiro.spring.boot.cache.ShiroEhCacheConfiguration;
+import org.apache.shiro.spring.boot.cache.ShiroEhCache2CacheConfiguration;
 import org.apache.shiro.spring.boot.openid.OpenidDiscoveryInformationProvider;
 import org.apache.shiro.spring.boot.openid.OpenidDiscoveryInformationSessionProvider;
 import org.apache.shiro.spring.config.web.autoconfigure.ShiroWebAutoConfiguration;
@@ -332,7 +332,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @AutoConfigureBefore(ShiroWebAutoConfiguration.class)
-@AutoConfigureAfter(ShiroEhCacheConfiguration.class)
+@AutoConfigureAfter(ShiroEhCache2CacheConfiguration.class)
 @ConditionalOnProperty(prefix = ShiroOpenidProperties.PREFIX, value = "enabled", havingValue = "true")
 @EnableConfigurationProperties({ ShiroOpenidProperties.class })
 public class ShiroOpenidAutoConfiguration implements ApplicationContextAware {
