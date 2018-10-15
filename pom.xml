@@ -376,7 +376,7 @@
         <maven-surefire-plugin.vertsion>2.21.0</maven-surefire-plugin.vertsion>
 		<maven-nexus-staging-plugin.version>1.6.8</maven-nexus-staging-plugin.version>
  		<openid4java.version>1.0.0</openid4java.version>
-		<shiro-biz.version>1.0.0-SNAPSHOT</shiro-biz.version>
+		<spring-boot-starter-shiro-biz.version>1.0.1.RELEASE</spring-boot-starter-shiro-biz.version>
 	</properties>
 	
 	<dependencies>
@@ -445,7 +445,7 @@
 		<dependency>
 			<groupId>com.github.vindell</groupId>
 			<artifactId>spring-boot-starter-shiro-biz</artifactId>
-			<version>${shiro-biz.version}</version>
+			<version>${spring-boot-starter-shiro-biz.version}</version>
 		</dependency>
 		
 	</dependencies>
