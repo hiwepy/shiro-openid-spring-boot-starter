@@ -15,23 +15,19 @@
  */
 package org.apache.shiro.spring.boot.openid;
 
-import java.util.Set;
-
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.biz.authz.principal.ShiroPrincipal;
-import org.apache.shiro.biz.authz.principal.ShiroPrincipalRepository;
+import org.apache.shiro.biz.authz.principal.ShiroPrincipalRepositoryImpl;
 import org.apache.shiro.spring.boot.openid.token.OpenidAccessToken;
-
-import com.google.common.collect.Sets;
 
 /**
  * Openid Token Principal Repository
  * @author 		： <a href="https://github.com/vindell">vindell</a>
  */
-public class OpenidStatelessPrincipalRepository implements ShiroPrincipalRepository<OpenidStatelessPrincipal> {
+public class OpenidStatelessPrincipalRepository extends ShiroPrincipalRepositoryImpl {
 	
 	@Override
 	public AuthenticationInfo getAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
@@ -47,39 +43,6 @@ public class OpenidStatelessPrincipalRepository implements ShiroPrincipalReposit
 		*/
 		return new SimpleAuthenticationInfo(principal, "", "kisso");
 	}
-
-	@Override
-	public Set<String> getRoles(OpenidStatelessPrincipal principal) {
-		return principal.getRoles();
-	}
-
-	@Override
-	public Set<String> getRoles(Set<OpenidStatelessPrincipal> principals) {
-		Set<String> sets = Sets.newHashSet();
-		for (ShiroPrincipal principal : principals) {
-			sets.addAll(principal.getRoles());
-		}
-		return sets;
-	}
-
-	@Override
-	public Set<String> getPermissions(OpenidStatelessPrincipal principal) {
-		return Sets.newHashSet(principal.getPerms());
-	}
-
-	@Override
-	public Set<String> getPermissions(Set<OpenidStatelessPrincipal> principals) {
-		Set<String> sets = Sets.newHashSet();
-		for (ShiroPrincipal principal : principals) {
-			sets.addAll(principal.getPerms());
-		}
-		return sets;
-	}
-	
-	@Override
-	public void doLock(OpenidStatelessPrincipal principal) {
-		// do nothing
-	}
-
+	 
 	
 }

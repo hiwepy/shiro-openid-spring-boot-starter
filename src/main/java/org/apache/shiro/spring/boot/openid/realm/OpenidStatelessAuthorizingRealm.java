@@ -11,7 +11,7 @@ import org.apache.shiro.subject.PrincipalCollection;
  * Openid Stateless AuthorizingRealm
  * @author <a href="https://github.com/vindell">vindell</a>
  */
-public class OpenidStatelessAuthorizingRealm extends AbstractAuthorizingRealm<OpenidStatelessPrincipal> {
+public class OpenidStatelessAuthorizingRealm extends AbstractAuthorizingRealm {
 
 	@Override
 	public Class<?> getAuthenticationTokenClass() {
