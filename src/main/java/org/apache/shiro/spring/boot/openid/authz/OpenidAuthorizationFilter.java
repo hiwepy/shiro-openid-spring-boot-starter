@@ -32,7 +32,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Openid 授权 (authorization) 过滤器
- * @author ： <a href="https://github.com/vindell">vindell</a>
+ * @author ： <a href="https://github.com/hiwepy">hiwepy</a>
  */
 public class OpenidAuthorizationFilter extends AbstracAuthorizationFilter {
 
@@ -120,7 +120,7 @@ public class OpenidAuthorizationFilter extends AbstracAuthorizationFilter {
 	
 	/**
 	 * TODO
-	 * @author ：<a href="https://github.com/vindell">vindell</a>
+	 * @author ：<a href="https://github.com/hiwepy">hiwepy</a>
 	 * @param mappedValue
 	 * @param e
 	 * @param request
