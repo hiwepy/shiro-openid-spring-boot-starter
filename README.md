@@ -1,4 +1,4 @@
-# spring-boot-starter-shiro-openid
+# shiro-openid-spring-boot-starter
 shiro openid starter for spring boot
 
 ### 说明
@@ -14,7 +14,7 @@ shiro openid starter for spring boot
 ``` xml
 <dependency>
 	<groupId>${project.groupId}</groupId>
-	<artifactId>spring-boot-starter-shiro-biz</artifactId>
+	<artifactId>shiro-biz-spring-boot-starter</artifactId>
 	<version>${project.version}</version>
 </dependency>
 ```
