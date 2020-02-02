@@ -23,6 +23,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.biz.authc.AuthcResponse;
 import org.apache.shiro.biz.utils.WebUtils;
 import org.apache.shiro.biz.web.filter.authc.AbstractTrustableAuthenticatingFilter;
 import org.apache.shiro.spring.boot.openid.OpenidDiscoveryInformationProvider;
@@ -40,6 +41,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.web.util.UriComponentsBuilder;
+
+import com.alibaba.fastjson.JSONObject;
 
 /**
  * Openid 认证 (authentication)过滤器
@@ -151,8 +154,8 @@ public class OpenidAuthenticatingFilter extends AbstractTrustableAuthenticatingF
 			
 			// Ajax 请求：响应json数据对象
 			if (WebUtils.isAjaxRequest(request)) {
-				WebUtils.writeJSONString(response, HttpServletResponse.SC_UNAUTHORIZED, mString);
-				return false;
+				// Response Authentication status information
+				JSONObject.writeJSONString(response.getWriter(), AuthcResponse.fail(mString));
 			}
 			// 普通请求：重定向到未授权提示页
 			WebUtils.issueRedirect(request, response, getUnauthorizedUrl());

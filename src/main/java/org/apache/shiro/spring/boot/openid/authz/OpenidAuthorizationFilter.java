@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
+import org.apache.shiro.biz.authc.AuthcResponse;
 import org.apache.shiro.biz.utils.StringUtils;
 import org.apache.shiro.biz.utils.WebUtils;
 import org.apache.shiro.biz.web.filter.authz.AbstracAuthorizationFilter;
@@ -29,6 +30,8 @@ import org.openid4java.message.ax.AxMessage;
 import org.openid4java.message.ax.FetchResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.alibaba.fastjson.JSONObject;
 
 /**
  * Openid 授权 (authorization) 过滤器
@@ -120,15 +123,16 @@ public class OpenidAuthorizationFilter extends AbstracAuthorizationFilter {
 	
 	/**
 	 * TODO
-	 * @author ：<a href="https://github.com/hiwepy">hiwepy</a>
+	 * @author 		：<a href="https://github.com/hiwepy">wandl</a>
 	 * @param mappedValue
 	 * @param e
 	 * @param request
 	 * @param response
 	 * @return
+	 * @throws IOException
 	 */
 	@Override
-	protected boolean onAccessFailure(Object mappedValue, Exception e, ServletRequest request,
+	protected boolean onAccessFailure(Object mappedValue, AuthenticationException e, ServletRequest request,
 			ServletResponse response) throws IOException {
 
 		LOG.error("Host {} Openid Authentication Failure : {}", getHost(request), e.getMessage());
@@ -149,7 +153,7 @@ public class OpenidAuthorizationFilter extends AbstracAuthorizationFilter {
 		if (WebUtils.isAjaxRequest(httpRequest)) {
 			/* AJAX 请求 403 未授权访问提示 */
 			httpResponse.setStatus(HttpServletResponse.SC_FORBIDDEN);
-			WebUtils.writeJSONString(httpResponse, data);
+			JSONObject.writeJSONString(httpResponse.getWriter(), AuthcResponse.success(data));
         } else {
         	// If subject is known but not authorized, redirect to the unauthorized URL if
 			// there is one
