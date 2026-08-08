@@ -35,7 +35,7 @@ import com.alibaba.fastjson.JSONObject;
 
 /**
  * Openid 授权 (authorization) 过滤器
- * @author ： <a href="https://github.com/hiwepy">hiwepy</a>
+ * @author [@Loong Wan](https://github.com/loong10k)
  */
 public class OpenidAuthorizationFilter extends AbstracAuthorizationFilter {
 
@@ -123,7 +123,7 @@ public class OpenidAuthorizationFilter extends AbstracAuthorizationFilter {
 	
 	/**
 	 * TODO
-	 * @author 		：<a href="https://github.com/hiwepy">wandl</a>
+	 * @author [@Loong Wan](https://github.com/loong10k)
 	 * @param mappedValue
 	 * @param e
 	 * @param request

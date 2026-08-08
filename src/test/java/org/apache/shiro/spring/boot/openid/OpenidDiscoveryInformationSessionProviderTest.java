@@ -13,31 +13,26 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.apache.shiro.spring.boot.openid.exception;
+package org.apache.shiro.spring.boot.openid;
 
-import org.apache.shiro.authc.AuthenticationException;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * TODO
+ * Unit tests for {{ @link OpenidDiscoveryInformationSessionProvider }}.
+ *
  * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
  */
+@DisplayName("OpenidDiscoveryInformationSessionProvider Tests")
+class OpenidDiscoveryInformationSessionProviderTest {
 
-public class OpenidMessageException extends AuthenticationException {
-	
-	public OpenidMessageException() {
-		super();
-	}
-
-	public OpenidMessageException(String message, Throwable cause) {
-		super(message, cause);
-	}
-
-	public OpenidMessageException(String message) {
-		super(message);
-	}
-
-	public OpenidMessageException(Throwable cause) {
-		super(cause);
-	}
-	
+    @Test
+    @DisplayName("Instance can be created via constructor")
+    void testInstantiation() {
+        OpenidDiscoveryInformationSessionProvider instance = new OpenidDiscoveryInformationSessionProvider();
+        assertThat(instance).isNotNull();
+    }
 }
