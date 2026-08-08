@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, hiwepy (https://github.com/easy-4-java).
+ * Copyright (c) 2018, hiwepy (https://github.com/hiwepy).
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -15,20 +15,20 @@
  */
 package org.apache.shiro.spring.boot.openid;
 
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
 
 import org.openid4java.discovery.DiscoveryInformation;
 
 /**
  * Openid DiscoveryInformation Provider
- * @author 		： <a href="https://github.com/easy-4-java">hiwepy</a>
+ * @author [@Loong Wan](https://github.com/loong10k)
  */
 public interface OpenidDiscoveryInformationProvider {
 
 	/**
 	 * store the discovery information in the user's session  
-	 * @author 		： <a href="https://github.com/easy-4-java">hiwepy</a>
+	 * @author [@Loong Wan](https://github.com/loong10k)
 	 * @param request
 	 * @param response
 	 * @param discovered
@@ -37,7 +37,7 @@ public interface OpenidDiscoveryInformationProvider {
 
 	 /**
 	  * retrieve the previously stored discovery information  
-	  * @author 		： <a href="https://github.com/easy-4-java">hiwepy</a>
+	  * @author [@Loong Wan](https://github.com/loong10k)
 	  * @param request
 	  * @param response
 	  * @return

@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -35,7 +35,7 @@ import com.alibaba.fastjson.JSONObject;
 
 /**
  * Openid 授权 (authorization) 过滤器
- * @author ： <a href="https://github.com/easy-4-java">hiwepy</a>
+ * @author [@Loong Wan](https://github.com/loong10k)
  */
 public class OpenidAuthorizationFilter extends AbstracAuthorizationFilter {
 
@@ -123,7 +123,7 @@ public class OpenidAuthorizationFilter extends AbstracAuthorizationFilter {
 	
 	/**
 	 * TODO
-	 * @author 		：<a href="https://github.com/easy-4-java">wandl</a>
+	 * @author [@Loong Wan](https://github.com/loong10k)
 	 * @param mappedValue
 	 * @param e
 	 * @param request
