@@ -5,7 +5,7 @@ import org.apache.shiro.spring.boot.openid.token.OpenidAccessToken;
 
 /**
  * Openid Stateful AuthorizingRealm
- * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
+ * @author [@Loong Wan](https://github.com/loong10k)
  */
 public class OpenidStatefulAuthorizingRealm extends AbstractAuthorizingRealm{
 
