@@ -24,7 +24,7 @@ import org.openid4java.discovery.DiscoveryInformation;
 
 /**
  * Openid DiscoveryInformation Session Provider
- * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
+ * @author [@Loong Wan](https://github.com/loong10k)
  */
 public class OpenidDiscoveryInformationSessionProvider implements OpenidDiscoveryInformationProvider {
 
