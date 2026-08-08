@@ -15,20 +15,20 @@
  */
 package org.apache.shiro.spring.boot.openid;
 
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
 
 import org.openid4java.discovery.DiscoveryInformation;
 
 /**
  * Openid DiscoveryInformation Provider
- * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
+ * @author [@Loong Wan](https://github.com/loong10k)
  */
 public interface OpenidDiscoveryInformationProvider {
 
 	/**
 	 * store the discovery information in the user's session  
-	 * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
+	 * @author [@Loong Wan](https://github.com/loong10k)
 	 * @param request
 	 * @param response
 	 * @param discovered
@@ -37,7 +37,7 @@ public interface OpenidDiscoveryInformationProvider {
 
 	 /**
 	  * retrieve the previously stored discovery information  
-	  * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
+	  * @author [@Loong Wan](https://github.com/loong10k)
 	  * @param request
 	  * @param response
 	  * @return

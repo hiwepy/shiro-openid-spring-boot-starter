@@ -15,8 +15,8 @@
  */
 package org.apache.shiro.spring.boot.openid;
 
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
 
 import org.apache.shiro.biz.utils.SubjectUtils;
 import org.apache.shiro.session.Session;
@@ -24,7 +24,7 @@ import org.openid4java.discovery.DiscoveryInformation;
 
 /**
  * Openid DiscoveryInformation Session Provider
- * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
+ * @author [@Loong Wan](https://github.com/loong10k)
  */
 public class OpenidDiscoveryInformationSessionProvider implements OpenidDiscoveryInformationProvider {
 
