@@ -335,6 +335,13 @@ import org.springframework.context.annotation.Configuration;
 @AutoConfigureAfter(ShiroEhCache2CacheConfiguration.class)
 @ConditionalOnProperty(prefix = ShiroOpenidProperties.PREFIX, value = "enabled", havingValue = "true")
 @EnableConfigurationProperties({ ShiroOpenidProperties.class })
+/**
+ * Auto-configuration for ShiroOpenid integration.
+ * <p>Registers the necessary beans when the feature is enabled.</p>
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 public class ShiroOpenidAutoConfiguration implements ApplicationContextAware {
 
 	private static final Logger LOG = LoggerFactory.getLogger(ShiroOpenidAutoConfiguration.class);
