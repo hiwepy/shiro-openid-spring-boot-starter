@@ -22,13 +22,13 @@ import org.openid4java.discovery.DiscoveryInformation;
 
 /**
  * Openid DiscoveryInformation Provider
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  */
 public interface OpenidDiscoveryInformationProvider {
 
 	/**
 	 * store the discovery information in the user's session  
-	 * @author [@Loong Wan](https://github.com/loong10k)
+	 * @author <a href="https://github.com/loong10k">Loong Wan</a>
 	 * @param request
 	 * @param response
 	 * @param discovered
@@ -37,7 +37,7 @@ public interface OpenidDiscoveryInformationProvider {
 
 	 /**
 	  * retrieve the previously stored discovery information  
-	  * @author [@Loong Wan](https://github.com/loong10k)
+	  * @author <a href="https://github.com/loong10k">Loong Wan</a>
 	  * @param request
 	  * @param response
 	  * @return
