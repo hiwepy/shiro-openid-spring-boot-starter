@@ -25,7 +25,7 @@ import org.apache.shiro.spring.boot.openid.token.OpenidAccessToken;
 
 /**
  * Openid Token Principal Repository
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  */
 public class OpenidStatelessPrincipalRepository extends ShiroPrincipalRepositoryImpl {
 	
