@@ -5,20 +5,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import jakarta.servlet.ServletRequest;
-import jakarta.servlet.ServletResponse;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.biz.authc.AuthcResponse;
-import org.apache.shiro.biz.utils.StringUtils;
-import org.apache.shiro.biz.utils.WebUtils;
+import org.apache.shiro.biz.utils.WebUtils2;
 import org.apache.shiro.biz.web.filter.authz.AbstracAuthorizationFilter;
 import org.apache.shiro.spring.boot.openid.OpenidDiscoveryInformationProvider;
 import org.apache.shiro.spring.boot.openid.token.OpenidAccessToken;
 import org.apache.shiro.subject.Subject;
+import org.apache.shiro.web.util.WebUtils;
 import org.openid4java.OpenIDException;
 import org.openid4java.consumer.ConsumerManager;
 import org.openid4java.consumer.VerificationResult;
@@ -35,7 +35,7 @@ import com.alibaba.fastjson.JSONObject;
 
 /**
  * Openid 授权 (authorization) 过滤器
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  */
 public class OpenidAuthorizationFilter extends AbstracAuthorizationFilter {
 
@@ -61,8 +61,11 @@ public class OpenidAuthorizationFilter extends AbstracAuthorizationFilter {
             // (which comes in as a HTTP request from the OpenID provider)  
             ParameterList parameterList = new ParameterList(request.getParameterMap());  
   
-            // retrieve the previously stored discovery information  
-            DiscoveryInformation discovered = discoveryInformationProvider.getDiscovered(httpRequest, httpResponse);  
+            // retrieve the previously stored discovery information
+            // Cast to jakarta types: at runtime in Spring Boot 4.x the actual objects are jakarta servlet
+            DiscoveryInformation discovered = discoveryInformationProvider.getDiscovered(
+                    (jakarta.servlet.http.HttpServletRequest) (Object) httpRequest,
+                    (jakarta.servlet.http.HttpServletResponse) (Object) httpResponse);  
   
             // extract the receiving URL from the HTTP request  
             StringBuffer receivingURL = httpRequest.getRequestURL();  
@@ -123,7 +126,7 @@ public class OpenidAuthorizationFilter extends AbstracAuthorizationFilter {
 	
 	/**
 	 * TODO
-	 * @author [@Loong Wan](https://github.com/loong10k)
+	 * @author <a href="https://github.com/loong10k">Loong Wan</a>
 	 * @param mappedValue
 	 * @param e
 	 * @param request
@@ -150,7 +153,7 @@ public class OpenidAuthorizationFilter extends AbstracAuthorizationFilter {
 		data.put("status", "fail");
 		data.put("message", mString);
 		
-		if (WebUtils.isAjaxRequest(httpRequest)) {
+		if (WebUtils2.isAjaxRequest(httpRequest)) {
 			/* AJAX 请求 403 未授权访问提示 */
 			httpResponse.setStatus(HttpServletResponse.SC_FORBIDDEN);
 			JSONObject.writeJSONString(httpResponse.getWriter(), AuthcResponse.success(data));
@@ -162,7 +165,7 @@ public class OpenidAuthorizationFilter extends AbstracAuthorizationFilter {
 			String unauthorizedUrl = getUnauthorizedUrl();
 			// SHIRO-142 - ensure that redirect _or_ error code occurs - both cannot happen
 			// due to response commit:
-			if (StringUtils.hasText(unauthorizedUrl)) {
+			if (unauthorizedUrl != null && !unauthorizedUrl.isEmpty()) {
 				WebUtils.issueRedirect(request, response, unauthorizedUrl);
 			} else {
 				WebUtils.toHttp(response).sendError(HttpServletResponse.SC_UNAUTHORIZED, "Forbidden");

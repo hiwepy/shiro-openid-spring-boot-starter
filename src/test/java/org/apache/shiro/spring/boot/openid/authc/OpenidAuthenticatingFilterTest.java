@@ -21,9 +21,9 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Unit tests for {{ @link OpenidAuthenticatingFilter }}.
+ * Unit tests for {@link OpenidAuthenticatingFilter}.
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 1.0.0
  */
 @DisplayName("OpenidAuthenticatingFilter Tests")
@@ -34,5 +34,43 @@ class OpenidAuthenticatingFilterTest {
     void testInstantiation() {
         OpenidAuthenticatingFilter instance = new OpenidAuthenticatingFilter();
         assertThat(instance).isNotNull();
+    }
+
+    @Test
+    @DisplayName("Default redirect URL is root")
+    void testDefaultRedirectUrl() {
+        OpenidAuthenticatingFilter instance = new OpenidAuthenticatingFilter();
+        assertThat(instance.getRedirectUrl()).isEqualTo("/");
+    }
+
+    @Test
+    @DisplayName("Redirect URL can be set")
+    void testSetRedirectUrl() {
+        OpenidAuthenticatingFilter instance = new OpenidAuthenticatingFilter();
+        instance.setRedirectUrl("/custom-redirect");
+        assertThat(instance.getRedirectUrl()).isEqualTo("/custom-redirect");
+    }
+
+    @Test
+    @DisplayName("Redirect URL can be set to null")
+    void testSetRedirectUrlNull() {
+        OpenidAuthenticatingFilter instance = new OpenidAuthenticatingFilter();
+        instance.setRedirectUrl(null);
+        assertThat(instance.getRedirectUrl()).isNull();
+    }
+
+    @Test
+    @DisplayName("Redirect URL can be set to empty string")
+    void testSetRedirectUrlEmpty() {
+        OpenidAuthenticatingFilter instance = new OpenidAuthenticatingFilter();
+        instance.setRedirectUrl("");
+        assertThat(instance.getRedirectUrl()).isEmpty();
+    }
+
+    @Test
+    @DisplayName("Filter extends AbstractTrustableAuthenticatingFilter")
+    void testExtendsAbstractTrustableAuthenticatingFilter() {
+        OpenidAuthenticatingFilter instance = new OpenidAuthenticatingFilter();
+        assertThat(instance).isInstanceOf(org.apache.shiro.biz.web.filter.authc.AbstractTrustableAuthenticatingFilter.class);
     }
 }

@@ -21,18 +21,28 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Unit tests for {{ @link OpenidDiscoveryInformationProvider }}.
+ * Unit tests for {@link OpenidDiscoveryInformationProvider}.
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 1.0.0
  */
 @DisplayName("OpenidDiscoveryInformationProvider Tests")
 class OpenidDiscoveryInformationProviderTest {
 
     @Test
-    @DisplayName("Instance can be created via constructor")
-    void testInstantiation() {
-        OpenidDiscoveryInformationProvider instance = new OpenidDiscoveryInformationProvider();
-        assertThat(instance).isNotNull();
+    @DisplayName("Session provider implements the interface")
+    void testSessionProviderImplementsInterface() {
+        OpenidDiscoveryInformationSessionProvider provider = new OpenidDiscoveryInformationSessionProvider();
+        assertThat(provider).isInstanceOf(OpenidDiscoveryInformationProvider.class);
+    }
+
+    @Test
+    @DisplayName("Interface defines setDiscovered and getDiscovered methods")
+    void testInterfaceMethods() throws NoSuchMethodException {
+        assertThat(OpenidDiscoveryInformationProvider.class.getMethod("setDiscovered",
+                jakarta.servlet.ServletRequest.class, jakarta.servlet.ServletResponse.class,
+                org.openid4java.discovery.DiscoveryInformation.class)).isNotNull();
+        assertThat(OpenidDiscoveryInformationProvider.class.getMethod("getDiscovered",
+                jakarta.servlet.ServletRequest.class, jakarta.servlet.ServletResponse.class)).isNotNull();
     }
 }
