@@ -19,7 +19,7 @@ import org.apache.shiro.authc.HostAuthenticationToken;
 
 /**
  * KISSO Access Token
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  */
 @SuppressWarnings("serial")
 public class OpenidAccessToken implements HostAuthenticationToken {
