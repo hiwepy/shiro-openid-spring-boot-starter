@@ -26,10 +26,18 @@ import org.apache.shiro.spring.boot.openid.token.OpenidAccessToken;
 /**
  * Openid Token Principal Repository
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
  */
 public class OpenidStatelessPrincipalRepository extends ShiroPrincipalRepositoryImpl {
 	
 	@Override
+	/**
+	 * get Authentication Info.
+	 *
+	 * @param token the token
+	 * @return the result
+	 * @throws AuthenticationException if an error occurs
+	 */
 	public AuthenticationInfo getAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 		
 		OpenidAccessToken kissoToken = (OpenidAccessToken) token;

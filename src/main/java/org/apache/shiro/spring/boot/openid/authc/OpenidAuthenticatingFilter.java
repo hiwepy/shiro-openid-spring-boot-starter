@@ -46,6 +46,7 @@ import com.alibaba.fastjson.JSONObject;
 /**
  * Openid 认证 (authentication)过滤器
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
  */
 public class OpenidAuthenticatingFilter extends AbstractTrustableAuthenticatingFilter {
 

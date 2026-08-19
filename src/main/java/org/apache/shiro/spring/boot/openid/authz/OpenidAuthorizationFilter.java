@@ -36,6 +36,7 @@ import com.alibaba.fastjson.JSONObject;
 /**
  * Openid 授权 (authorization) 过滤器
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
  */
 public class OpenidAuthorizationFilter extends AbstracAuthorizationFilter {
 

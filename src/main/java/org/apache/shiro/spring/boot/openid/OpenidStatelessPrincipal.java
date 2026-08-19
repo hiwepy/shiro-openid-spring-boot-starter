@@ -20,6 +20,7 @@ import org.apache.shiro.biz.authz.principal.ShiroPrincipal;
 /**
  * Openid Token Principal
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
  */
 @SuppressWarnings("serial")
 public class OpenidStatelessPrincipal extends ShiroPrincipal {

@@ -25,6 +25,7 @@ import org.openid4java.discovery.DiscoveryInformation;
 /**
  * Openid DiscoveryInformation Session Provider
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
  */
 public class OpenidDiscoveryInformationSessionProvider implements OpenidDiscoveryInformationProvider {
 
@@ -34,6 +35,13 @@ public class OpenidDiscoveryInformationSessionProvider implements OpenidDiscover
 	private String discoveredStoreKey = "openid-disc";
 	
 	@Override
+	/**
+	 * set Discovered.
+	 *
+	 * @param request the request
+	 * @param response the response
+	 * @param discovered the discovered
+	 */
 	public void setDiscovered(ServletRequest request, ServletResponse response, DiscoveryInformation discovered) {
 
 		// httpRequest.getSession().setAttribute("openid-disc", discovered);  
@@ -46,6 +54,13 @@ public class OpenidDiscoveryInformationSessionProvider implements OpenidDiscover
 	}
 	
 	@Override
+	/**
+	 * get Discovered.
+	 *
+	 * @param request the request
+	 * @param response the response
+	 * @return the result
+	 */
 	public DiscoveryInformation getDiscovered(ServletRequest request, ServletResponse response) {
 		
 		// retrieve the previously stored discovery information  
@@ -55,10 +70,20 @@ public class OpenidDiscoveryInformationSessionProvider implements OpenidDiscover
 		return discovered;
 	}
 
+	/**
+	 * Returns the discovered store key.
+	 *
+	 * @return the discovered store key
+	 */
 	public String getDiscoveredStoreKey() {
 		return discoveredStoreKey;
 	}
 
+	/**
+	 * Sets the discovered store key.
+	 *
+	 * @param discoveredStoreKey the discovered store key
+	 */
 	public void setDiscoveredStoreKey(String discoveredStoreKey) {
 		this.discoveredStoreKey = discoveredStoreKey;
 	}

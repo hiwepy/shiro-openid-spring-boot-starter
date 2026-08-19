@@ -23,6 +23,7 @@ import org.openid4java.discovery.DiscoveryInformation;
 /**
  * Openid DiscoveryInformation Provider
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
  */
 public interface OpenidDiscoveryInformationProvider {
 
